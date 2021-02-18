@@ -1,0 +1,34 @@
+trigger:
+- master
+
+steps:
+- task: UsePythonVersion@0
+  displayName: 'Use Python 3.7'
+  inputs:
+    versionSpec: 3.7
+
+- bash: |
+    pip install -r requirements_tests.txt
+  displayName: 'Setup requirements for tests'
+  
+- bash: |
+    sudo npm install -g azurite
+    sudo mkdir azurite
+    sudo azurite --silent --location azurite --debug azurite\debug.log &
+  displayName: 'Install and Run Azurite'
+
+- bash: |
+    python -m pytest --junit-xml=unit_tests_report.xml --cov=tests --cov-report=html --cov-report=xml ./tests
+  displayName: 'Run Tests'
+
+- task: PublishCodeCoverageResults@1
+  inputs:
+    codeCoverageTool: Cobertura
+    summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/coverage.xml'
+    reportDirectory: '$(System.DefaultWorkingDirectory)/**/htmlcov'
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**/*_tests_report.xml'
+    failTaskOnFailedTests: true
