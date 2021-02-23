@@ -3,12 +3,12 @@ trigger:
 
 steps:
 - task: UsePythonVersion@0
-  displayName: 'Use Python 3.7'
+  displayName: 'Use Python 3.8'
   inputs:
-    versionSpec: 3.7
+    versionSpec: 3.8
 
 - bash: |
-    pip install -r requirements_tests.txt
+    pip install -r requirements_dev.txt
   displayName: 'Setup requirements for tests'
   
 - bash: |

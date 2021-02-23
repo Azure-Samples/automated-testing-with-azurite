@@ -1,0 +1,8 @@
+version: '3.9'
+services:
+  azurite:
+    image: mcr.microsoft.com/azure-storage/azurite
+    restart: always
+    hostname: azurite
+    command: "azurite --blobPort 10000 --queuePort 10001"
+
