@@ -81,10 +81,9 @@ Do not forget to start your emulator, Storage Explorer will not start it for you
 3. Create a virtual python environment 
 
    `python3 -m venv env`  
-   `source env/bin/activate` [on Linux]   `env/scripts/activate` [on Windows]  
+   `source env/bin/activate` [on Linux] or `env/scripts/activate` [on Windows]  
 
 4. Install the dependencies  
-
   `pip3 install -r requirements_dev.txt`
     
 5. Run tests:
@@ -99,11 +98,11 @@ After the tests run, you can see the files in your local blob storage
 
 ## Run tests on Azure DevOps Pipelines
 
-After successfully running tests on local, we will run the `azure-pipelines` build yaml file using Azure DevOps Pipelines.
+After successfully running tests on local, run the `azure-pipelines` build yaml file using Azure DevOps Pipelines.
 
 **Note:** You will need
-* An existing [Azure subscription](https://azure.microsoft.com/en-us/free/)
-* An existing [Azure DevOps](https://azure.microsoft.com/en-us/services/devops/) organization and project.
+* an existing [Azure subscription](https://azure.microsoft.com/en-us/free/)
+* an existing [Azure DevOps](https://azure.microsoft.com/en-us/services/devops/) organization and project.
 
 1. Login to Azure DevOps
 
@@ -111,6 +110,6 @@ After successfully running tests on local, we will run the `azure-pipelines` bui
 
 3. Run the Pipeline 
 
-Once we set up and run the pipeline in Azure DevOps Pipelines, result will be like below
+After successful set up and running the pipeline in Azure DevOps Pipelines, the result should be like below:
 
 ![azure pipelines](assets/azure_pipeline.png)
