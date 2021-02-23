@@ -115,7 +115,7 @@ After successfully running tests on local, we will run the `azure-pipelines` bui
 
 1. Login to Azure DevOps
 
-2. Create a Pipeline using `build/azure-pipelines.yml` 
+2. Under the Organisation and Project, select a Repo and Configure a Pipeline using `build/azure-pipelines.yml` 
 
 3. Run the Pipeline 
 
