@@ -53,7 +53,6 @@ services:
   azurite:
     image: mcr.microsoft.com/azure-storage/azurite
     restart: always
-    hostname: azurite
     command: "azurite --blobPort 10000 --queuePort 10001"
 
 ```
@@ -89,11 +88,10 @@ Do not forget to start your emulator, Storage Explorer will not start it for you
 
 3. Create a virtual python environment  
    `python3 -m venv env`  
-   `source env/bin/activate`
 
 4. Install the dependencies  
 
-    `pip install -r requirements_dev.txt`
+    `pip3 install -r requirements_dev.txt`
 
 5. Run tests:
 
