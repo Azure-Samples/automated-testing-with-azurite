@@ -53,7 +53,7 @@ services:
   azurite:
     image: mcr.microsoft.com/azure-storage/azurite
     restart: always
-    command: "azurite --blobPort 10000 --queuePort 10001"
+    command: "azurite --blobPort 10000:10000 --queuePort 10001:10001"
 
 ```
 
@@ -71,9 +71,10 @@ Azurite Queue service is successfully listening at http://127.0.0.1:10001
 
 ### Run tests on local
 
-Python 3.8 is used for this, but it should be fine on other 3.x versions as well.
+Python 3.8 is used for this, but it should also work fine on other 3.x versions.
 
-1. To test and see how these endpoints are running you can attach your local blob storage to the [**Azure Storage Explorer**](https://azure.microsoft.com/en-us/features/storage-explorer/). In Azure Storage Explorer, 
+1. To test and see how these endpoints are running you can attach your local blob storage to the [**Azure Storage Explorer**](https://azure.microsoft.com/en-us/features/storage-explorer/).  
+In Azure Storage Explorer:  
 
 - right click on `Storage Accounts` and select `Connect to Azure Storage`
 ![connect storage](assets/storage_account.png)  
