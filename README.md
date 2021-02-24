@@ -1,3 +1,18 @@
+---
+page_type: sample
+languages:
+- python
+- pytest
+- yaml
+products:
+- azure
+- azure-devops
+- azure-blob-storage
+- azurite
+description: Using Azurite to run blob storage tests in Azure DevOps Pipeline with a sample application
+urlFragment: automated-testing-with-azure
+---
+
 # Using Azurite to run blob storage tests in Azure DevOps Pipeline
 
 ## Overview
