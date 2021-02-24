@@ -6,7 +6,7 @@ This repo determines the approach for writing automated tests with a short feedb
 
 Once private endpoints are enabled for the Azure Storage accounts, the current tests will fail when executed locally or as part of a pipeline because this connection will be blocked.
 
-In this repo you can find a sample for Azure Blob Storage to upload images from url and upload files from a local folder. To run project `.env` file to load environment variables for running code on local or pipeline and using `conftest.py` to load environment variables for tests.
+In this repo you can find a sample for Azure Blob Storage to upload images from url and upload files from a local folder. To run, `cp sample_env.txt .env` file to load environment variables for running code on local or pipeline and using `conftest.py` to load environment variables for tests.
 
 Here's the folder structure for the sample:
 
@@ -64,7 +64,7 @@ Azurite Queue service is successfully listening at http://127.0.0.1:10001
 
 Python 3.8 is used for this, but it should also work fine on other 3.6+ versions.
 
-1. To test and see how these endpoints are running you can attach your local blob storage to the [**Azure Storage Explorer**](https://azure.microsoft.com/en-us/features/storage-explorer/).  
+1. To test and see how these endpoints are running, you can attach your local blob storage to the [**Azure Storage Explorer**](https://azure.microsoft.com/en-us/features/storage-explorer/).  
 In Azure Storage Explorer:  
 
 - right click on `Storage Accounts` and select `Connect to Azure Storage`
@@ -106,10 +106,10 @@ After successfully running tests on local, run the `azure-pipelines` build yaml 
 
 1. Login to Azure DevOps
 
-2. Under the Organisation and Project, select a Repo and Configure a Pipeline using `build/azure-pipelines.yml` 
+2. Under the Organisation and Project, select the sample folder git Repo and Configure a Pipeline using the `build/azure-pipelines.yml` 
 
 3. Run the Pipeline 
 
-After successful set up and running the pipeline in Azure DevOps Pipelines, the result should be like below:
+After a successful set up and running the pipeline in Azure DevOps Pipelines, the result should be like below:
 
 ![azure pipelines](assets/azure_pipeline.png)

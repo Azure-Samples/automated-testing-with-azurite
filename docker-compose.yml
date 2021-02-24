@@ -4,7 +4,7 @@ services:
     image: mcr.microsoft.com/azure-storage/azurite
     hostname: azurite
     restart: always
-    command: "azurite --blobHost 0.0.0.0 --blobPort 10000 --queueHost 0.0.0.0 --queuePort 10001"
+    command: "azurite --blobHost 127.0.0.1 --blobPort 10000 --queueHost 127.0.0.1 --queuePort 10001"
     ports:
       - "10000:10000"
       - "10001:10001"
