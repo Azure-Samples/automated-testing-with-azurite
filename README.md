@@ -1,3 +1,18 @@
+---
+page_type: sample
+languages:
+- python
+- pytest
+- yaml
+products:
+- azure
+- azure-devops
+- azure-blob-storage
+- azurite
+description: Using Azurite to run blob storage tests in Azure DevOps Pipeline with a sample application
+urlFragment: automated-testing-with-azure
+---
+
 # Using Azurite to run blob storage tests in Azure DevOps Pipeline
 
 ## Overview
@@ -6,7 +21,7 @@ This repo determines the approach for writing automated tests with a short feedb
 
 Once private endpoints are enabled for the Azure Storage accounts, the current tests will fail when executed locally or as part of a pipeline because this connection will be blocked.
 
-In this repo you can find a sample for Azure Blob Storage to upload images from url and upload files from a local folder. To run project `.env` file to load environment variables for running code on local or pipeline and using `conftest.py` to load environment variables for tests.
+In this repo you can find a sample for Azure Blob Storage to upload images from url and upload files from a local folder. To run, `cp sample_env.txt .env` file to load environment variables for running code on local or pipeline and using `conftest.py` to load environment variables for tests.
 
 Here's the folder structure for the sample:
 
@@ -19,6 +34,7 @@ Here's the folder structure for the sample:
   - `conftest.py` - Configuration file for running tests
   - `test_azure_blob_storage.py` - Azure Blob Storage Test Code
 - `.env` - Environment variable files for Blob Storage
+- `docker-compose.yml` - Docker Compose yaml file to run Azurite Docker Image
 - `requirements.txt` - Required pip packages to run python code on your local and pipeline
 - `requirements_dev.txt` - Required pip packages to run test code on your local and pipeline
 
@@ -45,18 +61,7 @@ azurite -s -l /usr/local/lib/node_modules/azurite -d /usr/local/lib/node_modules
 ```
 
 #### b. Using docker image
-Docker Compose will run the docker image using the `docker-compose.yaml` file below.
-
-```yaml
-version: '3.9'
-services:
-  azurite:
-    image: mcr.microsoft.com/azure-storage/azurite
-    restart: always
-    hostname: azurite
-    command: "azurite --blobPort 10000 --queuePort 10001"
-
-```
+Docker Compose will run the docker image using the `docker-compose.yml` file.
 
 ```bash
 docker-compose up 
@@ -72,29 +77,29 @@ Azurite Queue service is successfully listening at http://127.0.0.1:10001
 
 ### Run tests on local
 
-Python 3.8 is used for this, but it should be fine on other 3.x versions as well.
+Python 3.8 is used for this, but it should also work fine on other 3.6+ versions.
 
-1. To test and see how these endpoints are running you can attach your local blob storage to the [**Azure Storage Explorer**](https://azure.microsoft.com/en-us/features/storage-explorer/). In Azure Storage Explorer, 
+1. To test and see how these endpoints are running, you can attach your local blob storage to the [**Azure Storage Explorer**](https://azure.microsoft.com/en-us/features/storage-explorer/). In Azure Storage Explorer:  
 
 - right click on `Storage Accounts` and select `Connect to Azure Storage`
-![connect storage](assets/storage_account.png)  
+    ![connect storage](assets/storage_account.png)  
 
 - then select `Attach to a local emulator`  
-![connect blob](assets/blob_storage_connection.png)
+    ![connect blob](assets/blob_storage_connection.png)
 
 2. Provide a Display name and port number, then your connection will be ready and you can use Storage Explorer to manage your local blob storage.  
-![attach to local](assets/blob_storage_connection_attach.png)
+    ![attach to local](assets/blob_storage_connection_attach.png)
 
 Do not forget to start your emulator, Storage Explorer will not start it for you.
 
-3. Create a virtual python environment  
+3. Create a virtual python environment 
+
    `python3 -m venv env`  
-   `source env/bin/activate`
+   `source env/bin/activate` [on Linux] or `env/scripts/activate` [on Windows]  
 
 4. Install the dependencies  
-
-    `pip install -r requirements_dev.txt`
-
+  `pip3 install -r requirements_dev.txt`
+    
 5. Run tests:
 
    ```bash
@@ -107,18 +112,18 @@ After the tests run, you can see the files in your local blob storage
 
 ## Run tests on Azure DevOps Pipelines
 
-After successfully running tests on local, we will run the `azure-pipelines` build yaml file using Azure    DevOps Pipelines.
+After successfully running tests on local, run the `azure-pipelines` build yaml file using Azure DevOps Pipelines.
 
 **Note:** You will need
-* An existing [Azure subscription](https://azure.microsoft.com/en-us/free/)
-* An existing [Azure DevOps](https://azure.microsoft.com/en-us/services/devops/) organization and project.
+* an existing [Azure subscription](https://azure.microsoft.com/en-us/free/)
+* an existing [Azure DevOps](https://azure.microsoft.com/en-us/services/devops/) organization and project.
 
 1. Login to Azure DevOps
 
-2. Under the Organisation and Project, select a Repo and Configure a Pipeline using `build/azure-pipelines.yml` 
+2. Under the Organisation and Project, select the sample folder git Repo and Configure a Pipeline using the `build/azure-pipelines.yml` 
 
 3. Run the Pipeline 
 
-Once we set up and run the pipeline in Azure DevOps Pipelines, result will be like below
+After a successful set up and running the pipeline in Azure DevOps Pipelines, the result should be like below:
 
 ![azure pipelines](assets/azure_pipeline.png)
