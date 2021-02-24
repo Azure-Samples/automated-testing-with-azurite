@@ -79,17 +79,16 @@ Azurite Queue service is successfully listening at http://127.0.0.1:10001
 
 Python 3.8 is used for this, but it should also work fine on other 3.6+ versions.
 
-1. To test and see how these endpoints are running, you can attach your local blob storage to the [**Azure Storage Explorer**](https://azure.microsoft.com/en-us/features/storage-explorer/).  
-In Azure Storage Explorer:  
+1. To test and see how these endpoints are running, you can attach your local blob storage to the [**Azure Storage Explorer**](https://azure.microsoft.com/en-us/features/storage-explorer/). In Azure Storage Explorer:  
 
 - right click on `Storage Accounts` and select `Connect to Azure Storage`
-![connect storage](assets/storage_account.png)  
+    ![connect storage](assets/storage_account.png)  
 
 - then select `Attach to a local emulator`  
-![connect blob](assets/blob_storage_connection.png)
+    ![connect blob](assets/blob_storage_connection.png)
 
 2. Provide a Display name and port number, then your connection will be ready and you can use Storage Explorer to manage your local blob storage.  
-![attach to local](assets/blob_storage_connection_attach.png)
+    ![attach to local](assets/blob_storage_connection_attach.png)
 
 Do not forget to start your emulator, Storage Explorer will not start it for you.
 
