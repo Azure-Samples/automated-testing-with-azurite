@@ -2,7 +2,6 @@
 page_type: sample
 languages:
 - python
-- pytest
 - yaml
 products:
 - azure
