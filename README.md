@@ -10,8 +10,8 @@ products:
 - azure-blob-storage
 - azurite
 name: Azure Blob Storage testing Pipeline with Azurite
-description: "Using Azurite to run blob storage tests in Azure DevOps Pipeline with a sample application"
-urlFragment: "automated-testing-with-azure"
+description: Using Azurite to run blob storage tests in Azure DevOps Pipeline with a sample application
+urlFragment: automated-testing-with-azure
 ---
 
 # Using Azurite to run blob storage tests in Azure DevOps Pipeline
