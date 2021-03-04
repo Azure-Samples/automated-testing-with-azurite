@@ -7,7 +7,6 @@ products:
 - azure
 - azure-devops
 - azure-blob-storage
-- azurite
 name: Azure Blob Storage testing Pipeline with Azurite
 description: Using Azurite to run blob storage tests in Azure DevOps Pipeline with a sample application
 urlFragment: automated-testing-with-azure
@@ -127,3 +126,11 @@ After successfully running tests on local, run the `azure-pipelines` build yaml 
 After a successful set up and running the pipeline in Azure DevOps Pipelines, the result should be like below:
 
 ![azure pipelines](assets/azure_pipeline.png)
+
+## License:
+
+See [LICENSE](LICENSE).
+
+## Contributing
+
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
