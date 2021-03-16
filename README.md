@@ -50,6 +50,7 @@ Here's the folder structure for the sample:
 - [Node JS](https://nodejs.org/en/download/)
 - [Docker](https://docs.docker.com/desktop/): if installing Azurite using docker-compose.
 - [Azurite](https://docs.microsoft.com/en-us/azure/storage/common/storage-use-azurite#install-and-run-azurite-by-using-npm)
+- [Azure Storage Explorer](https://azure.microsoft.com/en-us/features/storage-explorer/).
 - [Azure Devops Account](https://www.dev.azure.com/) with an available project to house the deployment pipeline.
 
 ### Install and Launch Azurite in local environment
@@ -110,13 +111,14 @@ Python 3.8 is used for this, but it should also work fine on other 3.6+ versions
 
 Do not forget to start your emulator, Storage Explorer will not start it for you.
 
-3. Create a virtual python environment
+3. Create a virtual python environment from working directory:
 
    `python3 -m venv env`  
    `source env/bin/activate` [on Linux] or `env/scripts/activate` [on Windows]
 
-4. Install the dependencies  
+4. Install the dependencies:
    `python3 -m pip install -r requirements_dev.txt`
+
 5. Run tests:
 
    ```bash
