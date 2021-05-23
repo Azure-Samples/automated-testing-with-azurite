@@ -119,7 +119,7 @@ After successfully running tests on local, run the `azure-pipelines` build yaml 
 
 1. Login to Azure DevOps
 
-2. Under the Organisation and Project, select the sample folder git Repo and Configure a Pipeline using the `build/azure-pipelines.yml` 
+2. Under the Organization and Project, select the sample folder git Repo and Configure a Pipeline using the `build/azure-pipelines.yml` 
 
 3. Run the Pipeline 
 
