@@ -73,7 +73,7 @@ mkdir c:/azurite
 # Launch Azurite for Windows
 azurite --silent --location c:\azurite --debug c:\azurite\debug.log
 
-#Launch Azurite for MacOs or Linux:
+# Launch Azurite for MacOS or Linux
 azurite -s -l /usr/local/lib/node_modules/azurite -d /usr/local/lib/node_modules/azurite/debug.log
 ```
 
